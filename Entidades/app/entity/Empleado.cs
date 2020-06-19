@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Entidades.app.entity
 {
-    public class Empleados
+    public class Empleado
     {
 
 
@@ -20,10 +20,10 @@ namespace Entidades.app.entity
         public String Clave { get; set; }
         public int Persona_ID { get; set; }
 
-        public Empleados()
+        public Empleado()
         { }
 
-        public Empleados(string rut, string nombre, string apellido, Cargo cargo, string usuario, string clave)
+        public Empleado(string rut, string nombre, string apellido, Cargo cargo, string usuario, string clave)
         {
             Rut = rut;
             Nombre = nombre;

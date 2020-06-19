@@ -14,7 +14,7 @@ namespace AccesoDatos.impl
     {
         /** inserta datos a la base de datos//
          */
-        public bool SetEmpleado(Entidades.app.entity.Empleados empleados)
+        public bool SetEmpleado(Entidades.app.entity.Empleado empleados)
         {
             string sp = "set empleados";
             string oradb = "Data Source=(DESCRIPTION=(ADDRESS_LIST=" + "(ADDRESS=(PROTOCOL=TCP)(HOST=45.236.129.230)(PORT=1521)))"
@@ -48,7 +48,7 @@ namespace AccesoDatos.impl
         }
 
         //actualiza datos en la BDD*/
-        public bool UpdEmpleados(Entidades.app.entity.Empleados empleados)
+        public bool UpdEmpleados(Entidades.app.entity.Empleado empleados)
         {
             string sp = "UpdEmpleados";
             string oradb = "Data Source=(DESCRIPTION=(ADDRESS_LIST=" + "(ADDRESS=(PROTOCOL=TCP)(HOST=45.236.129.230)(PORT=1521)))"
@@ -82,11 +82,11 @@ namespace AccesoDatos.impl
 
         }
         //lista los datos de la BDD */
-        public List<Entidades.app.entity.Empleados> GetEmpleados()
+        public List<Entidades.app.entity.Empleado> GetEmpleados()
         {
            
             {
-                List<Entidades.app.entity.Empleados> empleados = new List<Entidades.app.entity.Empleados>();
+                List<Entidades.app.entity.Empleado> empleados = new List<Entidades.app.entity.Empleado>();
                 string oradb = "Data Source=(DESCRIPTION=(ADDRESS_LIST=" + "(ADDRESS=(PROTOCOL=TCP)(HOST=45.236.129.230)(PORT=1521)))"
      + "(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=xe)));"
      + "User Id=ferne;Password=ferne;";
@@ -106,7 +106,7 @@ namespace AccesoDatos.impl
 
                         while (rs.Read())
                         {
-                            Entidades.app.entity.Empleados empleado = new Entidades.app.entity.Empleados();
+                            Entidades.app.entity.Empleado empleado = new Entidades.app.entity.Empleado();
                             empleado.Rut = rs["Rut"].ToString();
                             empleado.Nombre = rs["Nombre"].ToString();
                             empleado.Apellido = rs["Apellido"].ToString();

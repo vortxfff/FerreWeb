@@ -10,7 +10,7 @@ namespace Entidades.app.entity
         public long IDTipo { get; set; }
         public int Precio { get; set; }
         public int Stock { get; set; }
-        public char StockCritico { get; set; }
+        public int StockCritico { get; set; }
         public String Descripcion { get; set; }
 
         public Producto()

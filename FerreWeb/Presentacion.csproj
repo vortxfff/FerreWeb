@@ -460,6 +460,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AccesoDatos\AccesoDatos\AccesoDatos.csproj">
+      <Project>{16dda6cf-94cb-4d3e-b81a-a49b8992ef4d}</Project>
+      <Name>AccesoDatos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entidades\Entidades.csproj">
       <Project>{03bb5655-6726-405a-ad6f-4309c1f89442}</Project>
       <Name>Entidades</Name>

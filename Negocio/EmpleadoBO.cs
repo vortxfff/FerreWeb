@@ -8,7 +8,7 @@ namespace Negocio
 {
     public class EmpleadoBO
     {
-        public void InsertaEmpleado(Empleados empleados)
+        public void InsertaEmpleado(Empleado empleados)
         {
             try
             {
@@ -16,7 +16,7 @@ namespace Negocio
             }
             catch (Exception ex) { throw ex; }
         }
-        public List<Empleados> RescataEmpleados()
+        public List<Empleado> RescataEmpleados()
         {
             try
             {
@@ -24,7 +24,7 @@ namespace Negocio
             }
             catch (Exception ex) { throw ex; }
         }
-        public void ActualizaEmpleados(Empleados empleados)
+        public void ActualizaEmpleados(Empleado empleados)
         {
             try
             {

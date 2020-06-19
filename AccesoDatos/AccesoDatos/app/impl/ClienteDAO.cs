@@ -28,13 +28,13 @@ namespace AccesoDatos.impl
 
                     OracleCommand oracleCom = new OracleCommand(sp, oracleCon);
                     oracleCom.CommandType = CommandType.StoredProcedure;
-                    oracleCom.Parameters.Add("nombre", OracleType.VarChar); oracleCom.Parameters[0].Value = cliente.Nombre;
-                    oracleCom.Parameters.Add("apellido", OracleType.VarChar); oracleCom.Parameters[1].Value = cliente.Apellido;
-                    oracleCom.Parameters.Add("direccion", OracleType.VarChar); oracleCom.Parameters[2].Value = cliente.Direccion;
-                    oracleCom.Parameters.Add("correo", OracleType.VarChar); oracleCom.Parameters[3].Value = cliente.Correo;
-                    oracleCom.Parameters.Add("rut", OracleType.VarChar); oracleCom.Parameters[4].Value = cliente.Rut;                     
-                    oracleCom.Parameters.Add("telefono", OracleType.Number); oracleCom.Parameters[5].Value = cliente.Telefono;
-                    oracleCom.Parameters.Add("empresa", OracleType.Number); oracleCom.Parameters[6].Value = cliente.Empresa;
+                    oracleCom.Parameters.Add("V_nombre", OracleType.VarChar); oracleCom.Parameters[0].Value = cliente.Nombre;
+                    oracleCom.Parameters.Add("V_apellido", OracleType.VarChar); oracleCom.Parameters[1].Value = cliente.Apellido;
+                    oracleCom.Parameters.Add("V_direccion", OracleType.VarChar); oracleCom.Parameters[2].Value = cliente.Direccion;
+                    oracleCom.Parameters.Add("V_correo", OracleType.VarChar); oracleCom.Parameters[3].Value = cliente.Correo;
+                    oracleCom.Parameters.Add("V_rut", OracleType.VarChar); oracleCom.Parameters[4].Value = cliente.Rut;                     
+                    oracleCom.Parameters.Add("V_telefono", OracleType.Number); oracleCom.Parameters[5].Value = cliente.Telefono;
+                    oracleCom.Parameters.Add("V_empresa", OracleType.Number); oracleCom.Parameters[6].Value = cliente.Empresa;
 
 
                     oracleCon.Open();
