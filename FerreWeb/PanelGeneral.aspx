@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="PanelGeneral.aspx.cs" Inherits="FerreWeb.PanelGeneral" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <!--En esdta Seccion podemos colocar script y estilos para esta pagina. -->
+    <!--En esta Seccion podemos colocar script y estilos para esta pagina. -->
     <style>
         #centrador{
   position: relative;
