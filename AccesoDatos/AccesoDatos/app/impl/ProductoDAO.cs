@@ -103,7 +103,7 @@ namespace AccesoDatos.impl
                     while (rs.Read())
                     {
                         Entidades.app.entity.Producto productos = new Entidades.app.entity.Producto();
-                        //productos.FechaVencimiento = rs["FechaVencimiento"].();*/
+                        productos.FechaVencimiento = Convert.ToDateTime(rs["FechaVencimiento"]);
                         long.TryParse(rs["IDTipo"].ToString(), out pasoLong);
                         productos.IDTipo = pasoLong;
                         int.TryParse(rs["Precio"].ToString(), out pasoInt);
