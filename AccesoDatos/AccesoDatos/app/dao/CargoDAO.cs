@@ -41,7 +41,7 @@ namespace AccesoDatos.app.dao
 
         }
         //actualiza datos en la BDD*/
-        public bool UpdCliente(Entidades.app.entity.Cargo cargo)
+        public bool UpdCargo(Entidades.app.entity.Cargo cargo)
         {
             string sp = "UpdCargo";
             string oradb = "Data Source=(DESCRIPTION=(ADDRESS_LIST=" + "(ADDRESS=(PROTOCOL=TCP)(HOST=45.236.129.230)(PORT=1521)))"

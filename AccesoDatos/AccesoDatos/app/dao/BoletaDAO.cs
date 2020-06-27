@@ -14,7 +14,7 @@ namespace AccesoDatos.app.dao
     {
         /** inserta datos a la base de datos//
          */
-        public bool SetEmpleado(Entidades.app.entity.Boleta boleta)
+        public bool SetBoleta(Entidades.app.entity.Boleta boleta)
         {
             string sp = "setBoleta";
             string oradb = "Data Source=(DESCRIPTION=(ADDRESS_LIST=" + "(ADDRESS=(PROTOCOL=TCP)(HOST=45.236.129.230)(PORT=1521)))"
@@ -45,7 +45,7 @@ namespace AccesoDatos.app.dao
         }
 
         //actualiza datos en la BDD*/
-        public bool UpdEmpleados(Entidades.app.entity.Boleta boleta)
+        public bool UpdBoleta(Entidades.app.entity.Boleta boleta)
         {
             string sp = "UpdBoleta";
             string oradb = "Data Source=(DESCRIPTION=(ADDRESS_LIST=" + "(ADDRESS=(PROTOCOL=TCP)(HOST=45.236.129.230)(PORT=1521)))"
@@ -83,7 +83,7 @@ namespace AccesoDatos.app.dao
                 string oradb = "Data Source=(DESCRIPTION=(ADDRESS_LIST=" + "(ADDRESS=(PROTOCOL=TCP)(HOST=45.236.129.230)(PORT=1521)))"
      + "(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=xe)));"
      + "User Id=ferne;Password=ferne;";
-                long pasoLong;
+               
                 int pasoInt;
                 try
                 {
