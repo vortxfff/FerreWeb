@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Entidades.app.entity;
+using System;
 using System.Collections.Generic;
 using AccesoDatos;
-using AccesoDatos.app.impl.AccesoDatos.impl;
-using AccesoDatos.impl;
-using Entidades.app.entity;
+using AccesoDatos.app.dao;
+using AccesoDatos.app.impl.AccesoDatos.app.dao;
 
 namespace Negocio
 {
@@ -14,7 +14,7 @@ namespace Negocio
         {
             try
             {
-                new DistribidorDAO().SetCliente(distribuidor);
+                new DistribidorDAO().(distribuidor);
             }
             catch (Exception ex) { throw ex; }
         }

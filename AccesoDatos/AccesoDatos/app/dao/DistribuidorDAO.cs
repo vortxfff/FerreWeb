@@ -16,13 +16,13 @@ namespace AccesoDatos.app.impl
     using System.Data.OracleClient;
 
 
-    namespace AccesoDatos.impl
+    namespace AccesoDatos.app.dao
     {
         public class DistribidorDAO
         {
             /** inserta datos a la base de datos//
              */
-            public bool SetCliente(Entidades.app.entity.Distribuidor distribuidor)
+            public bool SetDistribuidor(Entidades.app.entity.Distribuidor distribuidor)
             {
                 string sp = "SetDistribuidor";
                 string oradb = "Data Source=(DESCRIPTION=(ADDRESS_LIST=" + "(ADDRESS=(PROTOCOL=TCP)(HOST=45.236.129.230)(PORT=1521)))"

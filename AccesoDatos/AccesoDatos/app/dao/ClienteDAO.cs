@@ -8,7 +8,7 @@ using System.Data;
 using System.Data.OracleClient;
 
 
-namespace AccesoDatos.impl
+namespace AccesoDatos.app.dao
 {
     public class ClienteDAO
     {

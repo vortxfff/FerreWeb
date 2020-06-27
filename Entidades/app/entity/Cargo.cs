@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Entidadesapp.entity
+namespace Entidades.app.entity
 {
     public class Cargo
     {

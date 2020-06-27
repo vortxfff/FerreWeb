@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Entidades.app.entity;
+using System;
 using System.Collections.Generic;
 using AccesoDatos;
-using AccesoDatos.impl;
-using Entidades.app.entity;
+using AccesoDatos.app.dao;
+
 
 namespace Negocio
 {

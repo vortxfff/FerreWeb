@@ -8,7 +8,7 @@ using System.Data;
 using System.Data.OracleClient;
 
 
-namespace AccesoDatos.impl
+namespace AccesoDatos.app.dao
 {
     public class EmpleadosDAO
     {
@@ -16,7 +16,7 @@ namespace AccesoDatos.impl
          */
         public bool SetEmpleado(Entidades.app.entity.Empleado empleados)
         {
-            string sp = "set empleados";
+            string sp = "setEmpleados";
             string oradb = "Data Source=(DESCRIPTION=(ADDRESS_LIST=" + "(ADDRESS=(PROTOCOL=TCP)(HOST=45.236.129.230)(PORT=1521)))"
  + "(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=xe)));"
  + "User Id=ferne;Password=ferne;";

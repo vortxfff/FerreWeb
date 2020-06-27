@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using AccesoDatos;
-using AccesoDatos.impl;
+using AccesoDatos.app.dao;
 
 namespace Negocio
 {

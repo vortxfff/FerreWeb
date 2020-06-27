@@ -51,11 +51,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="app\impl\DistribuidorDAO.cs" />
-    <Compile Include="app\impl\EmpleadosDAO.cs" />
-    <Compile Include="app\impl\ClienteDAO.cs" />
+    <Compile Include="app\dao\BoletaDAO.cs" />
+    <Compile Include="app\dao\CargoDAO.cs" />
+    <Compile Include="app\dao\DistribuidorDAO.cs" />
+    <Compile Include="app\dao\EmpleadosDAO.cs" />
+    <Compile Include="app\dao\ClienteDAO.cs" />
     <Compile Include="app\dao\PerfilamientoDAO.cs" />
-    <Compile Include="app\impl\ProductoDAO.cs" />
+    <Compile Include="app\dao\ProductoDAO.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
