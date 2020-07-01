@@ -18,13 +18,13 @@ namespace AccesoDatos.app.impl
 
     namespace AccesoDatos.app.dao
     {
-        public class DistribidorDAO
+        public class ProveedorDAO
         {
             /** inserta datos a la base de datos//
              */
-            public bool SetDistribuidor(Entidades.app.entity.Distribuidor distribuidor)
+            public bool SetProveedor(Entidades.app.entity.Proveedor proveedor)
             {
-                string sp = "SetDistribuidor";
+                string sp = "SetProveedor";
                 string oradb = "Data Source=(DESCRIPTION=(ADDRESS_LIST=" + "(ADDRESS=(PROTOCOL=TCP)(HOST=45.236.129.230)(PORT=1521)))"
      + "(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=xe)));"
      + "User Id=ferne;Password=ferne;";
@@ -36,12 +36,10 @@ namespace AccesoDatos.app.impl
 
                         OracleCommand oracleCom = new OracleCommand(sp, oracleCon);
                         oracleCom.CommandType = CommandType.StoredProcedure;
-                        oracleCom.Parameters.Add("V_RutDistribuidor", OracleType.VarChar); oracleCom.Parameters[0].Value = distribuidor.RutDistruidor;
-                        oracleCom.Parameters.Add("V_NombreDistribuidor", OracleType.VarChar); oracleCom.Parameters[1].Value = distribuidor.NombreDistribuidor;
-                        oracleCom.Parameters.Add("V_Rubro", OracleType.VarChar); oracleCom.Parameters[2].Value = distribuidor.Rubro;
-                        oracleCom.Parameters.Add("V_Telefono", OracleType.Number); oracleCom.Parameters[3].Value = distribuidor.Telefono;
-                        oracleCom.Parameters.Add("V_CantidadSolicitada", OracleType.Number); oracleCom.Parameters[4].Value = distribuidor.CantidadSolicitada;
-                        oracleCom.Parameters.Add("V_Precio", OracleType.Number); oracleCom.Parameters[5].Value = distribuidor.Precios;
+                        oracleCom.Parameters.Add("V_NombreProveedor", OracleType.VarChar); oracleCom.Parameters[1].Value = proveedor.NombreProveedor;
+                        oracleCom.Parameters.Add("V_Rubro", OracleType.VarChar); oracleCom.Parameters[2].Value = proveedor.Rubro;
+                        oracleCom.Parameters.Add("V_Telefono", OracleType.Number); oracleCom.Parameters[3].Value = proveedor.Telefono;
+                        
                         
                         oracleCon.Open();
                         oracleCom.ExecuteNonQuery();
@@ -53,7 +51,7 @@ namespace AccesoDatos.app.impl
 
             }
             //actualiza datos en la BDD*/
-            public bool UpdDistribuidor(Entidades.app.entity.Distribuidor distribuidor)
+            public bool UpdProveedor(Entidades.app.entity.Proveedor proveedor)
             {
                 string sp = "UpdDistribuidor";
                 string oradb = "Data Source=(DESCRIPTION=(ADDRESS_LIST=" + "(ADDRESS=(PROTOCOL=TCP)(HOST=45.236.129.230)(PORT=1521)))"
@@ -67,12 +65,11 @@ namespace AccesoDatos.app.impl
 
                         OracleCommand oracleCom = new OracleCommand(sp, oracleCon);
                         oracleCom.CommandType = CommandType.StoredProcedure;
-                        oracleCom.Parameters.Add("V_RutDistribuidor", OracleType.VarChar); oracleCom.Parameters[0].Value = distribuidor.RutDistruidor;
-                        oracleCom.Parameters.Add("V_NombreDistribuidor", OracleType.VarChar); oracleCom.Parameters[1].Value = distribuidor.NombreDistribuidor;
-                        oracleCom.Parameters.Add("V_Rubro", OracleType.VarChar); oracleCom.Parameters[2].Value = distribuidor.Rubro;
-                        oracleCom.Parameters.Add("V_Telefono", OracleType.Number); oracleCom.Parameters[3].Value = distribuidor.Telefono;
-                        oracleCom.Parameters.Add("V_CantidadSolicitada", OracleType.Number); oracleCom.Parameters[4].Value = distribuidor.CantidadSolicitada;
-                        oracleCom.Parameters.Add("V_Precio", OracleType.Number); oracleCom.Parameters[5].Value = distribuidor.Precios;
+                        oracleCom.Parameters.Add("V_IDProveedor", OracleType.VarChar); oracleCom.Parameters[0].Value = proveedor.IDProveedor;
+                        oracleCom.Parameters.Add("V_NombreProveedor", OracleType.VarChar); oracleCom.Parameters[1].Value = proveedor.NombreProveedor;
+                        oracleCom.Parameters.Add("V_Rubro", OracleType.VarChar); oracleCom.Parameters[2].Value = proveedor.Rubro;
+                        oracleCom.Parameters.Add("V_Telefono", OracleType.Number); oracleCom.Parameters[3].Value = proveedor.Telefono;
+                       
 
                         oracleCon.Open();
                         oracleCom.ExecuteNonQuery();
@@ -84,13 +81,13 @@ namespace AccesoDatos.app.impl
 
             }
             //lista los datos de la BDD */
-            public List<Entidades.app.entity.Distribuidor> GetDistribuidor()
+            public List<Entidades.app.entity.Proveedor> GetProveedor()
             {
-                List<Entidades.app.entity.Distribuidor> distribuidores = new List<Entidades.app.entity.Distribuidor>();
+                List<Entidades.app.entity.Proveedor> proveedores = new List<Entidades.app.entity.Proveedor>();
                 string oradb = "Data Source=(DESCRIPTION=(ADDRESS_LIST=" + "(ADDRESS=(PROTOCOL=TCP)(HOST=45.236.129.230)(PORT=1521)))"
      + "(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=xe)));"
      + "User Id=ferne;Password=ferne;";
-                long pasoLong;
+                
                 int pasoInt;
                 try
                 {
@@ -106,22 +103,19 @@ namespace AccesoDatos.app.impl
 
                         while (rs.Read())
                         {
-                            Entidades.app.entity.Distribuidor distribuidor = new Entidades.app.entity.Distribuidor();
-                            distribuidor.RutDistruidor = rs["Rutdistribuidor"].ToString();
-                            distribuidor.NombreDistribuidor = rs["NombreDistribuidor"].ToString();
-                            distribuidor.Rubro = rs["Rubro"].ToString();
+                            Entidades.app.entity.Proveedor proveedor = new Entidades.app.entity.Proveedor();
+                            proveedor.IDProveedor = rs["ID"].ToString();
+                            proveedor.NombreProveedor = rs["Nombre"].ToString();
+                            proveedor.Rubro = rs["Rubro"].ToString();
                             int.TryParse(rs["Telefono"].ToString(), out pasoInt);
-                            distribuidor.Telefono = pasoInt;
+                            proveedor.Telefono = pasoInt;
            
-                            pasoInt = 0; int.TryParse(rs["CantidadSolicitada"].ToString(), out pasoInt);
-                            distribuidor.CantidadSolicitada = pasoInt;
-                            pasoInt = 0; int.TryParse(rs["Precios"].ToString(), out pasoInt);
-                            distribuidor.Precios = pasoInt;
+                           
 
-                            distribuidores.Add(distribuidor);
+                            proveedores.Add(proveedor);
                         }
                     }
-                    return distribuidores;
+                    return proveedores;
                 }
                 catch (Exception) { return null; }
             }

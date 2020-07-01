@@ -7,30 +7,30 @@ using AccesoDatos.app.impl.AccesoDatos.app.dao;
 
 namespace Negocio
 {
-    public class DistribuidorBO 
+    public class ProveedorBO 
 
     {
-        public void InsertaDistribuidor(Distribuidor distribuidor)
+        public void InsertaProveedor(Proveedor proveedor)
         {
             try
             {
-                new DistribidorDAO().(distribuidor);
+                new ProveedorDAO().SetProveedor(proveedor);
             }
             catch (Exception ex) { throw ex; }
         }
-        public List<Distribuidor> RescataDistribuidor()
+        public List<Proveedor> RescataDistribuidor()
         {
             try
             {
-                return new DistribidorDAO().GetDistribuidor();
+                return new ProveedorDAO().GetProveedor();
             }
             catch (Exception ex) { throw ex; }
         }
-        public void Actualizadistribuidor(Distribuidor distribuidor)
+        public void ActualizaProveedor(Proveedor distribuidor)
         {
             try
             {
-                new DistribidorDAO().UpdDistribuidor(distribuidor);
+                new ProveedorDAO().UpdProveedor(distribuidor);
             }
             catch (Exception ex) { throw ex; }
         }

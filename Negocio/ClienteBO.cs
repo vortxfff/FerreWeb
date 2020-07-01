@@ -16,6 +16,10 @@ namespace Negocio
             }
             catch(Exception ex) { throw ex; }            
         }
+
+     
+
+     
         public List<Cliente> RescataClientes()
         {
             try
@@ -24,6 +28,9 @@ namespace Negocio
             }
             catch(Exception ex) { throw ex; }
         }
+       
+        
+        
         public void ActualizaCliente(Cliente cliente)
         {
             try

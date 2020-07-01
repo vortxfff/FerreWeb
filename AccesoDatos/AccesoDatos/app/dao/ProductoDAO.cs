@@ -16,7 +16,7 @@ namespace AccesoDatos.app.dao
          */
         public bool SetProducto(Entidades.app.entity.Producto producto)
         {
-            string sp = "Set";
+            string sp = "SetProducto";
             string oradb = "Data Source=(DESCRIPTION=(ADDRESS_LIST=" + "(ADDRESS=(PROTOCOL=TCP)(HOST=45.236.129.230)(PORT=1521)))"
  + "(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=xe)));"
  + "User Id=ferne;Password=ferne;";
@@ -28,12 +28,12 @@ namespace AccesoDatos.app.dao
 
                     OracleCommand oracleCom = new OracleCommand(sp, oracleCon);
                     oracleCom.CommandType = CommandType.StoredProcedure;
+                    
                     oracleCom.Parameters.Add("V_FechaVencimiento", OracleType.DateTime); oracleCom.Parameters[0].Value = producto.FechaVencimiento;
-                    oracleCom.Parameters.Add("V_IDTipo", OracleType.Number); oracleCom.Parameters[1].Value = producto.IDTipo;
-                    oracleCom.Parameters.Add("V_Precio", OracleType.Number); oracleCom.Parameters[2].Value = producto.Precio;
-                    oracleCom.Parameters.Add("V_Stock", OracleType.Number); oracleCom.Parameters[3].Value = producto.Stock;
-                    oracleCom.Parameters.Add("V_StockCritico", OracleType.Number); oracleCom.Parameters[4].Value = producto.StockCritico;
-                    oracleCom.Parameters.Add("V_Descripcion", OracleType.VarChar); oracleCom.Parameters[5].Value = producto.Descripcion;
+                    oracleCom.Parameters.Add("V_Precio", OracleType.Number); oracleCom.Parameters[1].Value = producto.Precio;
+                    oracleCom.Parameters.Add("V_Stock", OracleType.Number); oracleCom.Parameters[2].Value = producto.Stock;
+                    oracleCom.Parameters.Add("V_StockCritico", OracleType.Number); oracleCom.Parameters[3].Value = producto.StockCritico;
+                    oracleCom.Parameters.Add("V_Descripcion", OracleType.VarChar); oracleCom.Parameters[4].Value = producto.Descripcion;
                     
 
 
@@ -61,8 +61,8 @@ namespace AccesoDatos.app.dao
 
                     OracleCommand oracleCom = new OracleCommand(sp, oracleCon);
                     oracleCom.CommandType = CommandType.StoredProcedure;
-                    oracleCom.Parameters.Add("V_FechaVencimiento", OracleType.DateTime); oracleCom.Parameters[0].Value = producto.FechaVencimiento;
-                    oracleCom.Parameters.Add("V_IDTipo", OracleType.Number); oracleCom.Parameters[1].Value = producto.IDTipo;
+                    oracleCom.Parameters.Add("V_IDTipo", OracleType.Number); oracleCom.Parameters[0].Value = producto.IDTipo;
+                    oracleCom.Parameters.Add("V_FechaVencimiento", OracleType.DateTime); oracleCom.Parameters[1].Value = producto.FechaVencimiento;
                     oracleCom.Parameters.Add("V_Precio", OracleType.Number); oracleCom.Parameters[2].Value = producto.Precio;
                     oracleCom.Parameters.Add("V_Stock", OracleType.Number); oracleCom.Parameters[3].Value = producto.Stock;
                     oracleCom.Parameters.Add("V_StockCritico", OracleType.Number); oracleCom.Parameters[4].Value = producto.StockCritico;

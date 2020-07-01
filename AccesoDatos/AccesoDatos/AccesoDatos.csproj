@@ -53,7 +53,7 @@
   <ItemGroup>
     <Compile Include="app\dao\BoletaDAO.cs" />
     <Compile Include="app\dao\CargoDAO.cs" />
-    <Compile Include="app\dao\DistribuidorDAO.cs" />
+    <Compile Include="app\dao\ProveedorDAO.cs" />
     <Compile Include="app\dao\EmpleadosDAO.cs" />
     <Compile Include="app\dao\ClienteDAO.cs" />
     <Compile Include="app\dao\PerfilamientoDAO.cs" />

@@ -28,13 +28,13 @@ namespace AccesoDatos.app.dao
 
                     OracleCommand oracleCom = new OracleCommand(sp, oracleCon);
                     oracleCom.CommandType = CommandType.StoredProcedure;
-                    oracleCom.Parameters.Add("nombre", OracleType.VarChar); oracleCom.Parameters[0].Value = empleados.Nombre;
-                    oracleCom.Parameters.Add("apellido", OracleType.VarChar); oracleCom.Parameters[1].Value = empleados.Apellido;
-                    oracleCom.Parameters.Add("direccion", OracleType.VarChar); oracleCom.Parameters[2].Value = empleados.Direccion;
-                    oracleCom.Parameters.Add("correo", OracleType.VarChar); oracleCom.Parameters[3].Value = empleados.Correo;
-                    oracleCom.Parameters.Add("rut", OracleType.VarChar); oracleCom.Parameters[4].Value = empleados.Rut;
-                    oracleCom.Parameters.Add("telefono", OracleType.Number); oracleCom.Parameters[5].Value = empleados.Telefono;
-                    oracleCom.Parameters.Add("cargo", OracleType.VarChar); oracleCom.Parameters[6].Value = empleados.Cargo;
+                    oracleCom.Parameters.Add("V_nombre", OracleType.VarChar); oracleCom.Parameters[0].Value = empleados.Nombre;
+                    oracleCom.Parameters.Add("V_apellido", OracleType.VarChar); oracleCom.Parameters[1].Value = empleados.Apellido;
+                    oracleCom.Parameters.Add("V_direccion", OracleType.VarChar); oracleCom.Parameters[2].Value = empleados.Direccion;
+                    oracleCom.Parameters.Add("V_correo", OracleType.VarChar); oracleCom.Parameters[3].Value = empleados.Correo;
+                    oracleCom.Parameters.Add("V_rut", OracleType.VarChar); oracleCom.Parameters[4].Value = empleados.Rut;
+                    oracleCom.Parameters.Add("V_telefono", OracleType.Number); oracleCom.Parameters[5].Value = empleados.Telefono;
+                    oracleCom.Parameters.Add("V_cargo", OracleType.VarChar); oracleCom.Parameters[6].Value = empleados.Cargo;
 
 
                     oracleCon.Open();
@@ -48,7 +48,7 @@ namespace AccesoDatos.app.dao
         }
 
         //actualiza datos en la BDD*/
-        public bool UpdEmpleados(Entidades.app.entity.Empleado empleados)
+        public bool UpdEmpleados(Entidades.app.entity.Empleado empleado)
         {
             string sp = "UpdEmpleados";
             string oradb = "Data Source=(DESCRIPTION=(ADDRESS_LIST=" + "(ADDRESS=(PROTOCOL=TCP)(HOST=45.236.129.230)(PORT=1521)))"
@@ -62,14 +62,15 @@ namespace AccesoDatos.app.dao
 
                     OracleCommand oracleCom = new OracleCommand(sp, oracleCon);
                     oracleCom.CommandType = CommandType.StoredProcedure;
-                    oracleCom.Parameters.Add("v_personaid", OracleType.Number); oracleCom.Parameters[0].Value = empleados.Persona_ID;
-                    oracleCom.Parameters.Add("v_nombre", OracleType.VarChar); oracleCom.Parameters[1].Value = empleados.Nombre;
-                    oracleCom.Parameters.Add("v_apellido", OracleType.VarChar); oracleCom.Parameters[2].Value = empleados.Apellido;
-                    oracleCom.Parameters.Add("v_direccion", OracleType.VarChar); oracleCom.Parameters[3].Value = empleados.Direccion;
-                    oracleCom.Parameters.Add("v_correo", OracleType.VarChar); oracleCom.Parameters[4].Value = empleados.Correo;
-                    oracleCom.Parameters.Add("v_rut", OracleType.VarChar); oracleCom.Parameters[5].Value = empleados.Rut;
-                    oracleCom.Parameters.Add("v_telefono", OracleType.Number); oracleCom.Parameters[6].Value = empleados.Telefono;
-                   
+                    oracleCom.Parameters.Add("V_personaid", OracleType.Number); oracleCom.Parameters[0].Value = empleado.Persona_ID;
+                    oracleCom.Parameters.Add("V_nombre", OracleType.VarChar); oracleCom.Parameters[1].Value = empleado.Nombre;
+                    oracleCom.Parameters.Add("V_apellido", OracleType.VarChar); oracleCom.Parameters[2].Value = empleado.Apellido;
+                    oracleCom.Parameters.Add("V_direccion", OracleType.VarChar); oracleCom.Parameters[3].Value = empleado.Direccion;
+                    oracleCom.Parameters.Add("V_correo", OracleType.VarChar); oracleCom.Parameters[4].Value = empleado.Correo;
+                    oracleCom.Parameters.Add("V_rut", OracleType.VarChar); oracleCom.Parameters[5].Value = empleado.Rut;
+                    oracleCom.Parameters.Add("V_telefono", OracleType.Number); oracleCom.Parameters[6].Value = empleado.Telefono;
+                    oracleCom.Parameters.Add("V_cargo", OracleType.VarChar); oracleCom.Parameters[7].Value = empleado.Cargo;
+
 
 
                     oracleCon.Open();
@@ -99,7 +100,7 @@ namespace AccesoDatos.app.dao
                         oracleCon.Open();
                         OracleCommand oracleCom = new OracleCommand();
                         oracleCom.Connection = oracleCon;
-                        oracleCom.CommandText = "SELECT * FROM vw_empleados crear";
+                        oracleCom.CommandText = "SELECT * FROM vw_empleados";
                         //oracleCom.CommandType = CommandType.StoredProcedure;
                         //oracleCom.Parameters.Add("@Rut", OracleType.VarChar); oracleCom.Parameters[0].Value = Rut;
                         OracleDataReader rs = oracleCom.ExecuteReader();
@@ -107,6 +108,8 @@ namespace AccesoDatos.app.dao
                         while (rs.Read())
                         {
                             Entidades.app.entity.Empleado empleado = new Entidades.app.entity.Empleado();
+                            pasoInt = 0; int.TryParse(rs["PERSONA_PERSONA_ID"].ToString(), out pasoInt);
+                            empleado.Persona_ID = pasoInt;
                             empleado.Rut = rs["Rut"].ToString();
                             empleado.Nombre = rs["Nombre"].ToString();
                             empleado.Apellido = rs["Apellido"].ToString();
@@ -114,8 +117,7 @@ namespace AccesoDatos.app.dao
                             empleado.Correo = rs["Correo"].ToString();
                             long.TryParse(rs["Telefono"].ToString(), out pasoLong);
                             empleado.Telefono = pasoLong;
-                            pasoInt = 0; int.TryParse(rs["PERSONA_PERSONA_ID"].ToString(), out pasoInt);
-                            empleado.Persona_ID = pasoInt;
+                            
 
 
                             empleados.Add(empleado);

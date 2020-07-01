@@ -12,7 +12,6 @@ namespace Entidades.app.entity
         public String Correo { get; set; }
         public String Direccion { get; set; }
         public int Empresa { get; set; }
-        public String RutEmpresa { get; set; }
         public String Usuario { get; set; }
         public long Telefono { get; set; }
         public int PersonaId { get; set; }

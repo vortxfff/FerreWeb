@@ -20,10 +20,22 @@
                             <asp:TextBox ID="txtRut" runat="server" Text=" " CssClass="form-control"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <label>Nombre y Apellido</label>
+                            <label>Nombre</label>
                         </div>
                         <div class="form-group">
                             <asp:TextBox ID="TextNombre" runat="server" Text=" " CssClass="form-control"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <label>Apellido</label>
+                        </div>
+                        <div class="form-group">
+                            <asp:TextBox ID="TextApellido" runat="server" Text=" " CssClass="form-control"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <label>Telefono</label>
+                        </div>
+                        <div class="form-group">
+                            <asp:TextBox ID="TextTelefono" runat="server" Text=" " CssClass="form-control"></asp:TextBox>
                         </div>
                         <div class="form-group">
                             <label>Dirección</label>
@@ -55,10 +67,10 @@
                             <asp:TextBox ID="Clave" runat="server" Text=" " CssClass="form-control"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <label>Rut Empresa</label>
+                            <label>Empresa</label>
                         </div>
                         <div class="form-group">
-                            <asp:TextBox ID="txtRutEmpresa" runat="server" Text=" " CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txtEmpresa" runat="server" Text=" " CssClass="form-control"></asp:TextBox>
                         </div>
                         <div class="form-group">
                             <label>Id Usuario</label>

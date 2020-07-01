@@ -59,7 +59,6 @@ namespace AccesoDatos.app.dao
 
                     OracleCommand oracleCom = new OracleCommand(sp, oracleCon);
                     oracleCom.CommandType = CommandType.StoredProcedure;
-                    oracleCom.Parameters.Add("V_IDBoleta", OracleType.Number); oracleCom.Parameters[0].Value = boleta.IDBoleta;
                     oracleCom.Parameters.Add("V_IDProducto", OracleType.Number); oracleCom.Parameters[1].Value = boleta.IDproducto;
                     oracleCom.Parameters.Add("V_NombreProducto", OracleType.VarChar); oracleCom.Parameters[2].Value = boleta.NombreProducto;
                     oracleCom.Parameters.Add("V_SumaPrecio", OracleType.Number); oracleCom.Parameters[3].Value = boleta.SumaPrecio;

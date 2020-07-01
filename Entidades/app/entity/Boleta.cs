@@ -18,6 +18,7 @@ namespace Entidades.app.entity
 
         public Boleta( int IDBoleta, int IDproducto, String NombreProducto, int SumaPrecio, int Total)
         {
+           
             this.IDBoleta = IDBoleta;
             this.IDproducto = IDproducto;
             this.NombreProducto = NombreProducto;

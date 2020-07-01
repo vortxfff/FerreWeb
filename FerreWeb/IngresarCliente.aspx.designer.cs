@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace FerreWeb {
-    
-    
-    public partial class IngresarCliente {
-        
+namespace FerreWeb
+{
+
+
+    public partial class IngresarCliente
+    {
+
         /// <summary>
         /// Control txtRut.
         /// </summary>
@@ -20,7 +22,7 @@ namespace FerreWeb {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtRut;
-        
+
         /// <summary>
         /// Control TextNombre.
         /// </summary>
@@ -29,7 +31,25 @@ namespace FerreWeb {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextNombre;
-        
+
+        /// <summary>
+        /// Control TextApellido.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextApellido;
+
+        /// <summary>
+        /// Control TextTelefono.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextTelefono;
+
         /// <summary>
         /// Control TextDireccion.
         /// </summary>
@@ -38,7 +58,7 @@ namespace FerreWeb {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextDireccion;
-        
+
         /// <summary>
         /// Control TextEmail.
         /// </summary>
@@ -47,7 +67,7 @@ namespace FerreWeb {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextEmail;
-        
+
         /// <summary>
         /// Control Clave.
         /// </summary>
@@ -56,16 +76,16 @@ namespace FerreWeb {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Clave;
-        
+
         /// <summary>
-        /// Control txtRutEmpresa.
+        /// Control txtEmpresa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRutEmpresa;
-        
+        protected global::System.Web.UI.WebControls.TextBox txtEmpresa;
+
         /// <summary>
         /// Control txtId.
         /// </summary>
@@ -74,7 +94,7 @@ namespace FerreWeb {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtId;
-        
+
         /// <summary>
         /// Control btnRegistrar.
         /// </summary>
@@ -83,7 +103,7 @@ namespace FerreWeb {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnRegistrar;
-        
+
         /// <summary>
         /// Control btnCancelar.
         /// </summary>
